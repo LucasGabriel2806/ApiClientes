@@ -11,7 +11,14 @@ if ($api = 'clientes') {
     if ($method == "POST") {
         include_once "post.php";       
     }
-
+    /**
+     * Php não trabalha com o método PUT, precisamos 
+     * dar um jogo de cintura pra fazer esse método
+     */
+    if ($method == "POST" && $_POST['_method'] == "PUT") {
+        include_once "put.php";       
+    }
+    
 }
 
 

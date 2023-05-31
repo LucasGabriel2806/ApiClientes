@@ -2,10 +2,12 @@
 // var_dump($acao);
 if ($acao == '' && $param == '') {
     echo json_encode(['ERRO' => 'Caminho não encontrado!']);
+    exit;
 }
 
 if ($acao == 'update' && $param == '') {
     echo json_encode(['ERRO' => "É necessário informar um cliente."]);
+    exit;
 }
 
 if ($acao == 'update' && $param != '') {
